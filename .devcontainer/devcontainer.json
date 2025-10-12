@@ -1,0 +1,36 @@
+{
+  "name": "DevTree Frontend",
+  "dockerComposeFile": "../app/docker-compose.yml",
+  "service": "devtree-frontend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.js-debug-nightly",
+        "rvest.vs-code-npm-scripts",
+        "usernamehw.errorlens",
+        "aaron-bond.better-comments"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Default Dark Plus",
+        "editor.formatOnSave": true,
+        "javascript.validate.enable": false,
+        "eslint.run": "onType",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
+    }
+  },
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install"
+}
